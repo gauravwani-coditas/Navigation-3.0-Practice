@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:navigation/core/routes/app_route_config.dart';
 
+@RoutePage()
 class IntroScreen extends StatelessWidget {
   const IntroScreen({super.key});
 
@@ -16,17 +18,17 @@ class IntroScreen extends StatelessWidget {
           children: [
 
             ElevatedButton(onPressed : (){
-              GoRouter.of(context).pushNamed('home');
+             AutoRouter.of(context).push(HomeRoute());
             }, 
             child: const Text("Home"),),
 
             ElevatedButton(onPressed : (){
-               GoRouter.of(context).push('/authors');
+              AutoRouter.of(context).push(AuthorsRoute());
             }, 
             child: const Text("Authors"),),
 
             ElevatedButton(onPressed : (){
-               GoRouter.of(context).push('/books');
+               AutoRouter.of(context).push(BooksRoute());
             }, 
             child: const Text("Books"),),
 
